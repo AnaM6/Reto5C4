@@ -9,7 +9,7 @@ import java.util.List;
 public interface GadgetCrudRepository extends MongoRepository<Gadget,Integer> {
 
     @Query("{ 'price' : {'lte':?0}}")
-    public List<Gadget> findByPrice(Double precio);
+    public List<Gadget> findByPrice(Double price);
 
     @Query("{'description' : {'$regex': {'$regularExpression': 'pattern': '?0','options':'i'}}}}")
     public List<Gadget> findByDescription(final String description);
